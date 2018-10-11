@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='zh-cn'>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    <%= title %>
+  </title>
+  <style>
+    * {
+      margin: 0;
+      padding: .5vw;
+    }
+
+    main {
+      height: 100vh;
+    }
+
+    .header {
+      margin-bottom: 5vw;
+      font-size: 5vw;
+    }
+
+    .people {
+      width: 50vw;
+      height: 8vw;
+      display: flex;
+      font-size: 3vw;
+      color: rgba(0, 0, 0, .7);
+    }
+
+    .name {
+      /* flex: 2; */
+    }
+
+    .age {
+      flex: 1;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="header">Yes, you are not wrong.</div>
+    <div class="header">This is our home page</div>
+    <% for(var i=0,len=data.list.length; i<len; i++){ %>
+    <div class="people">
+      <div class="name">
+        <%= data.list[i].name %>
+      </div>
+      <div class="age">
+        <%= data.list[i].age %> years old</div>
+    </div>
+    <% } %>
+  </main>
+</body>
+<script>
+  var list = <% - JSON.stringify(data.list) %>
+</script>
+
+</html>
